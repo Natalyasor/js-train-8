@@ -8,8 +8,10 @@
  */
 function getUsersFromDatabase(array) {
   // Використовуємо метод `Array.from` для створення масиву користувачів зі списку, елементи якого це об'єкти які міститять
+
   // id який дорівнює id користувача,firstName який дорівнює firstName користувача в верхньому регістрі та years який дорівнює age користувача
   // Повертаємо масив користувачів
+  
 }
 
 // Приклад використання функції getUsersFromDatabase
@@ -38,8 +40,13 @@ console.log(getUsersFromDatabase(userRecords));
  */
 function removeLastElement(arr) {
   // Перевіряємо, чи масив не є порожнім, якщо порожній повертаємо  undefined
+if (arr.length === 0) {
+  return undefined;
+}
   // Використовуємо метод `pop` для видалення останнього елементу з масиву
+  arr.pop();
   // Повертаємо оновлений масив
+  return(arr);
 }
 
 // Приклад використання функції removeLastElement
@@ -57,7 +64,10 @@ console.log(removeLastElement([1, 2, 3, 4, 5])); // Виведе [1, 2, 3, 4]
  */
 function filterByCondition(arr, condition) {
   // Використовуємо метод `filter` для фільтрації масиву
+  const filterFn = (value, index, array) => value % 2 === 0;
+  const filteredArr = arr.filter(filterFn);
   // Повертаємо відфільтрований масив
+  return(filteredArr);
 }
 
 // Приклад використання функції filterByCondition
@@ -75,6 +85,8 @@ console.log(filterByCondition([1, 2, 3, 4, 5], condition)); // Виведе [2, 
  */
 function checkArray(obj) {
   // Перевіряємо, чи є об'єкт не null і не undefined
+   obj === null
+   obj === undefined
   // Використовуємо метод `Array.isArray` для перевірки, чи є об'єкт масивом
   // Повертаємо результат перевірки
   // Якщо об'єкт є null або undefined, виводимо повідомлення про помилку Помилка: Вхідний об'єкт є null або undefined.
